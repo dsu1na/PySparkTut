@@ -29,7 +29,7 @@ spark = SparkSession \
 
 print(f"Time of reading parquet file: {datetime.datetime.now()}")
 
-    df = spark.read.format("parquet").load("../data/covid_tracking.parquet")
+df = spark.read.format("parquet").load("../data/covid_tracking.parquet")
 df.persist(StorageLevel.MEMORY_ONLY)
 
 df.withColumn("extra", F.lit("default column")).show()
