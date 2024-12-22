@@ -50,3 +50,5 @@ spark.sql("""
 select * from emp
 where not exists (select 1 from dept where dept.dept_id = emp.emp_dept_id)
 """).show()
+
+spark.stop()
