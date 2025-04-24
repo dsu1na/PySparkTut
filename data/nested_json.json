@@ -1,0 +1,9 @@
+{"date_hour": "2023-01-01 01", "visit_data": {"ios": 10, "android": 100, "web": 50}}
+{"date_hour": "2023-01-01 02", "visit_data": {"ios": 20, "android": 100}}
+{"date_hour": "2023-01-01 03", "visit_data": {"android": 100, "web": 50}}
+{"date_hour": "2023-01-02 01", "visit_data": {"ios": 20}}
+{"date_hour": "2023-01-02 02", "visit_data": {"ios": 200, "android": 50, "web": 10}}
+{"date_hour": "2023-01-02 03", "visit_data": {"web": 50}}
+{"date_hour": "2023-01-03 01", "visit_data": {"android": 100, "web": 150}}
+{"date_hour": "2023-01-04 05", "visit_data": {"ios": 10}}
+{"date_hour": "2023-01-05 11", "visit_data": {"web": 500}}
