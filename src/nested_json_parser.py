@@ -12,7 +12,10 @@ df = spark.read.json(json_path)
 
 df.printSchema()
 
-df.show()
+df.show(truncate=False)
+
+# get the column values from df
+df.withColumn("array_struct_a", F.col("array_struct").getItem("a")).show()
 
 df2 = df.withColumn("dates", F.split(F.col("date_hour"), " ")[0])
 

@@ -17,17 +17,26 @@ spark = SparkSession \
 df = spark \
     .read \
     .format("json") \
-    .load("./data/zipcodes.json")
+    .load("../data/zipcodes.json")
 
 logger.info("The schema of json read is:")
 df.printSchema()
+
+# read json using inferSchema
+df_infer_schema = spark \
+    .read \
+    .format("json") \
+    .option("inferSchema", "true") \
+    .load("../data/zipcodes.json")
+logger.info("The dataframe of json read with inferSchema is:")
+df_infer_schema.printSchema()
 
 # read a multiline json
 df_multiline = spark \
     .read \
     .format("json") \
     .option("multiline", "true") \
-    .load("./data/multiline-zipcodes.json")
+    .load("../data/multiline-zipcodes.json")
 
 logger.info("The dataframe of multiline json read is:")
 df_multiline.show()
@@ -35,7 +44,7 @@ df_multiline.show()
 df_multiple_files = spark \
     .read \
     .format("json") \
-    .load(["./data/zipcode1.json", "./data/zipcode2.json"])
+    .load(["../data/zipcode1.json", "../data/zipcode2.json"])
 
 logger.info("Reading multiple files")
 df_multiple_files.show()
@@ -45,7 +54,7 @@ df_multiple_files.show()
 df_all_json = spark \
     .read \
     .format("json") \
-    .load("./data/*.json")
+    .load("../data/*.json")
 
 logger.info("Reading all the json files from a folder")
 df_all_json.printSchema()
@@ -76,7 +85,7 @@ schema = StructType([
   ])
 
 df_with_schema = spark.read.schema(schema) \
-        .json("./data/zipcodes.json")
+        .json("../data/zipcodes.json")
 df_with_schema.printSchema()
 df_with_schema.show()
 
